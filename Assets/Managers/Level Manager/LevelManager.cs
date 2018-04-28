@@ -7,9 +7,10 @@ using System;
 public class LevelManager : MonoBehaviour
 {
 
+  int currentLevel = 0;
   ScoreManager scoreManager;
   Text levelText;
-  int currentLevel = 0;
+  Timer timer;
 
   // Use this for initialization
   void Start()
@@ -17,6 +18,7 @@ public class LevelManager : MonoBehaviour
     levelText = GetComponentInChildren<Text>();
     levelText.text = "Lv. " + (currentLevel + 1).ToString("n0");
     scoreManager = FindObjectOfType<ScoreManager>();
+    timer = FindObjectOfType<Timer>();
   }
 
   public int GetCurrentLevel()
@@ -30,6 +32,7 @@ public class LevelManager : MonoBehaviour
     {
       if (scoreManager.GetScore() >= Constants.scoreNeededToLevel[currentLevel + 1])
       {
+        timer.Reset();
         currentLevel++;
 				levelText.text = "Lv. " + (currentLevel + 1).ToString("n0");
       }

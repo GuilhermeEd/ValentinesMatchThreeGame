@@ -47,4 +47,9 @@ public class Timer : MonoBehaviour
       }
     }
   }
+
+  public void Reset()
+  {
+    timeLeft = totalTime;
+  }
 }
