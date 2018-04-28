@@ -14,7 +14,7 @@ public class Timer : MonoBehaviour
   Slider slider;
   GameObject sliderFill;
   Image sliderFillimage;
-  LevelManager levelManager;
+  GameManager gameManager;
 
 
   // Use this for initialization
@@ -26,7 +26,7 @@ public class Timer : MonoBehaviour
     sliderFillimage = sliderFill.GetComponent<Image>();
     sliderFillimage.color = startTimeColor;
 
-    levelManager = GameObject.FindObjectOfType<LevelManager>();
+    gameManager = GameObject.FindObjectOfType<GameManager>();
 
     StartCoroutine("Countdown");
   }
@@ -43,7 +43,7 @@ public class Timer : MonoBehaviour
       {
         StopCoroutine("Countdown");
         Destroy(sliderFill);
-        levelManager.OnTimeUp();
+        gameManager.OnTimeUp();
       }
     }
   }

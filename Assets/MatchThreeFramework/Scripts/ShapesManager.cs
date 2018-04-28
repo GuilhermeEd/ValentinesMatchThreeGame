@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class ShapesManager : MonoBehaviour
 {
+    ScoreManager scoreManager;
+
     public Text DebugText;
     public bool ShowDebugInfo = false;
     //candy graphics taken from http://opengameart.org/content/candy-pack-1
@@ -39,6 +41,7 @@ public class ShapesManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        scoreManager = GameObject.FindObjectOfType<ScoreManager>();
         InitializeTypesOnPrefabShapesAndBonuses();
 
         InitializeCandyAndSpawnPositions();
@@ -439,13 +442,13 @@ public class ShapesManager : MonoBehaviour
     private void InitializeVariables()
     {
         score = 0;
-        Score.SetScoreText(score);
+        scoreManager.SetScore(score);
     }
 
     private void IncreaseScore(int amount)
     {
         score += amount;
-        Score.SetScoreText(score);
+        scoreManager.SetScore(score);
     }
 
     /// <summary>

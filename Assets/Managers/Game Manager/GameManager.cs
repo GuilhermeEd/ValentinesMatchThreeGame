@@ -2,23 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelManager : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
 
   [SerializeField] int scoreNeeded = 15000;
   [SerializeField] GameObject successModal;
   [SerializeField] GameObject failModal;
   [SerializeField] GameObject canvas;
+
+  ScoreManager scoreManager;
+
+  void Start() {
+    scoreManager = GameObject.FindObjectOfType<ScoreManager>();
+  }
   
 
   public void OnTimeUp()
   {
-		float score = Score.GetScore();
-    if (score >= scoreNeeded) {
-			LevelSuccess();
-		} else {
-			LevelFail();
-		}
+    LevelFail();
   }
 
   void LevelSuccess()
