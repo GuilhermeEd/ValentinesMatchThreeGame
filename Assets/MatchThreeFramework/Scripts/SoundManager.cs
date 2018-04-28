@@ -6,12 +6,17 @@ public class SoundManager : MonoBehaviour {
     //crincle sound found here: http://freesound.org/people/volivieri/sounds/37171/
 
     public AudioClip crincleAudioClip;
+    public AudioClip powerUpAudioClip;
+
     AudioSource crincle;
+    AudioSource powerUp ;
+    
 
 
     void Awake()
     {
         crincle = AddAudio(crincleAudioClip);
+        powerUp = AddAudio(powerUpAudioClip);
     }
 
     AudioSource AddAudio( AudioClip audioClip)
@@ -25,5 +30,10 @@ public class SoundManager : MonoBehaviour {
     public void PlayCrincle()
     {
         crincle.Play();
+    }
+
+    public void PlayPowerUp()
+    {
+        powerUp.Play();
     }
 }

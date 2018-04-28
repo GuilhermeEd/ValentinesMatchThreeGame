@@ -23,14 +23,20 @@ public static class Constants
   public static readonly int Match3Score = 60;
   public static readonly int SubsequentMatchScore = 120;
 
+  public static readonly int levelUpScore = 250;
+
   public static readonly int[] scoreNeededToLevel = {
     0,
+    500,
     1000,
+    1500,
     3000,
-    8000,
-    12000,
+    7000,
+    9000,
+    13000,
     18000,
-    19000,
+    24000,
+    30000,
     };
 
 }

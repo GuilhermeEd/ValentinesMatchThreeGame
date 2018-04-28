@@ -9,6 +9,8 @@ public class LevelManager : MonoBehaviour
 
   int currentLevel = 0;
   ScoreManager scoreManager;
+  ShapesManager shapesManager;
+  SoundManager soundManager;
   Text levelText;
   Timer timer;
 
@@ -18,6 +20,8 @@ public class LevelManager : MonoBehaviour
     levelText = GetComponentInChildren<Text>();
     levelText.text = "Lv. " + (currentLevel + 1).ToString("n0");
     scoreManager = FindObjectOfType<ScoreManager>();
+    shapesManager = FindObjectOfType<ShapesManager>();
+    soundManager = FindObjectOfType<SoundManager>();
     timer = FindObjectOfType<Timer>();
   }
 
@@ -35,6 +39,8 @@ public class LevelManager : MonoBehaviour
         timer.Reset();
         currentLevel++;
 				levelText.text = "Lv. " + (currentLevel + 1).ToString("n0");
+        shapesManager.Bonus();
+        soundManager.PlayPowerUp();
       }
     }
     catch (IndexOutOfRangeException e)

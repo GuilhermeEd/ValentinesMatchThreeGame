@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
 
   public void OnTimeUp()
   {
-    LevelFail();
+    Debug.Log("Time Up!");
   }
 
   void LevelSuccess()
@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
   void LevelFail()
   {
     Vector3 middleOfScreen = new Vector3(Screen.width / 2f, Screen.height / 2f, 0f);
-    GameObject modal = Instantiate(successModal, middleOfScreen, Quaternion.identity);
+    GameObject modal = Instantiate(failModal, middleOfScreen, Quaternion.identity);
     modal.transform.parent = canvas.transform;
   }
 

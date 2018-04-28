@@ -573,17 +573,20 @@ public class ShapesManager : MonoBehaviour
       GameObject explosion = GetRandomExplosion();
       GameObject newExplosion = Instantiate(explosion, item.transform.position, Quaternion.identity);
       Destroy(newExplosion, Constants.ExplosionDuration);
+      soundManager.PlayCrincle();
       yield return new WaitForSeconds(interval);
     }
     StopCoroutine("InstantiateRandomExplosions");
   }
 
-    public void Teste() {
-        StartCoroutine(InstantiateRandomExplosions(10));
-        StartCoroutine(InstantiateRandomExplosions(10));
-        StartCoroutine(InstantiateRandomExplosions(10));
-        StartCoroutine(InstantiateRandomExplosions(10));
-        StartCoroutine(InstantiateRandomExplosions(10));
-    }
+  public void Bonus()
+  {
+    IncreaseScore(Constants.levelUpScore);
+    StartCoroutine(InstantiateRandomExplosions(10));
+    StartCoroutine(InstantiateRandomExplosions(10));
+    StartCoroutine(InstantiateRandomExplosions(10));
+    StartCoroutine(InstantiateRandomExplosions(10));
+    StartCoroutine(InstantiateRandomExplosions(10));
+  }
 
 }

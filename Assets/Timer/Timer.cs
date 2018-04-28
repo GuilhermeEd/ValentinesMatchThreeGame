@@ -27,25 +27,18 @@ public class Timer : MonoBehaviour
     sliderFillimage.color = startTimeColor;
 
     gameManager = GameObject.FindObjectOfType<GameManager>();
-
-    StartCoroutine("Countdown");
   }
 
-  IEnumerator Countdown()
+  void Update()
   {
-    while (true)
-    {
-      yield return new WaitForSeconds(1);
-      timeLeft -= 1f;
-      slider.value = timeLeft / totalTime;
-      sliderFillimage.color = Color.Lerp(endTimeColor, startTimeColor, slider.value);
-      if (timeLeft < 0f)
+    timeLeft -= Time.deltaTime;
+    sliderFillimage.color = Color.Lerp(endTimeColor, startTimeColor, slider.value);
+    slider.value = timeLeft / totalTime;
+    if (timeLeft < 0f)
       {
-        StopCoroutine("Countdown");
         Destroy(sliderFill);
         gameManager.OnTimeUp();
       }
-    }
   }
 
   public void Reset()
