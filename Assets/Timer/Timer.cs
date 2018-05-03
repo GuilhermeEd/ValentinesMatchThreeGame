@@ -15,6 +15,7 @@ public class Timer : MonoBehaviour
   GameObject sliderFill;
   Image sliderFillimage;
   GameManager gameManager;
+  bool isCounting = true;
 
 
   // Use this for initialization
@@ -31,14 +32,25 @@ public class Timer : MonoBehaviour
 
   void Update()
   {
+    if (isCounting) Tick();
+  }
+
+  void Tick()
+  {
     timeLeft -= Time.deltaTime;
     sliderFillimage.color = Color.Lerp(endTimeColor, startTimeColor, slider.value);
     slider.value = timeLeft / totalTime;
-    if (timeLeft < 0f)
-      {
-        Destroy(sliderFill);
-        gameManager.OnTimeUp();
-      }
+    if (timeLeft <= 0f)
+    {
+      Stop();
+      Destroy(sliderFill);
+      gameManager.OnTimeUp();
+    }
+  }
+
+  public void Stop()
+  {
+    isCounting = false;
   }
 
   public void Reset()

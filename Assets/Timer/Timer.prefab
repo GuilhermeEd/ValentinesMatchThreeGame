@@ -162,8 +162,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03706f5790f55cd4c8b441223e5aca2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalTime: 30
-  timeLeft: 30
+  totalTime: 60
+  timeLeft: 60
   startTimeColor: {r: 0.5742864, g: 1, b: 0.066176474, a: 1}
   endTimeColor: {r: 1, g: 0.6055364, b: 0.16176474, a: 1}
 --- !u!114 &114618370167811684

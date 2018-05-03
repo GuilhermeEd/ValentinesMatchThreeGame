@@ -7,10 +7,11 @@ using System;
 public class LevelManager : MonoBehaviour
 {
 
-  int currentLevel = 0;
+  [SerializeField] int currentLevel;
   ScoreManager scoreManager;
   ShapesManager shapesManager;
   SoundManager soundManager;
+  GameManager gameManager;
   Text levelText;
   Timer timer;
 
@@ -22,6 +23,7 @@ public class LevelManager : MonoBehaviour
     scoreManager = FindObjectOfType<ScoreManager>();
     shapesManager = FindObjectOfType<ShapesManager>();
     soundManager = FindObjectOfType<SoundManager>();
+    gameManager = FindObjectOfType<GameManager>();
     timer = FindObjectOfType<Timer>();
   }
 
@@ -30,25 +32,15 @@ public class LevelManager : MonoBehaviour
     return currentLevel;
   }
 
-  public void LevelUpCheck()
+  public void LevelSuccessCheck()
   {
-    try
+    if (scoreManager.GetScore() >= Constants.scoreNeededToLevel[currentLevel])
     {
-      if (scoreManager.GetScore() >= Constants.scoreNeededToLevel[currentLevel + 1])
-      {
-        timer.Reset();
-        currentLevel++;
-				levelText.text = "Lv. " + (currentLevel + 1).ToString("n0");
-        shapesManager.Bonus();
-        soundManager.PlayPowerUp();
-      }
+      timer.Reset();
+      shapesManager.Bonus();
+      soundManager.PlayPowerUp();
+      gameManager.OnLevelSuccess();
     }
-    catch (IndexOutOfRangeException e)
-    {
-      Debug.LogWarning("Player already reached maximum level");
-			Debug.LogWarning(e);
-    }
-
   }
 
 }

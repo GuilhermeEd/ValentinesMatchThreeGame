@@ -581,7 +581,6 @@ public class ShapesManager : MonoBehaviour
 
   public void Bonus()
   {
-    IncreaseScore(Constants.levelUpScore);
     StartCoroutine(InstantiateRandomExplosions(10));
     StartCoroutine(InstantiateRandomExplosions(10));
     StartCoroutine(InstantiateRandomExplosions(10));

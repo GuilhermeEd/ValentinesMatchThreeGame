@@ -28,13 +28,12 @@ public class ScoreManager : MonoBehaviour
     try
     {
       int lv = levelManager.GetCurrentLevel();
-      int lastScoreNeeded = Constants.scoreNeededToLevel[lv];
-      int scoreNeeded = Constants.scoreNeededToLevel[lv + 1];
+      int scoreNeeded = Constants.scoreNeededToLevel[lv];
       int score = GetScore();
 
       scoreText.text = value.ToString("n0");
-      slider.value = (float) (score - lastScoreNeeded) / (scoreNeeded - lastScoreNeeded);
-      levelManager.LevelUpCheck();
+      slider.value = (float) (score) / (scoreNeeded);
+      levelManager.LevelSuccessCheck();
     }
     catch (IndexOutOfRangeException e)
     {

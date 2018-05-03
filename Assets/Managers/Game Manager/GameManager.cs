@@ -9,24 +9,37 @@ public class GameManager : MonoBehaviour
   [SerializeField] GameObject failModal;
   [SerializeField] GameObject canvas;
 
+  Timer timer;
+
+  void Start () {
+    timer = FindObjectOfType<Timer>();
+  }
+
 
   public void OnTimeUp()
   {
-    Debug.Log("Time Up!");
+    timer.Stop();
+    LevelFail();
+  }
+
+  public void OnLevelSuccess()
+  {
+    timer.Stop();
+    LevelSuccess();
   }
 
   void LevelSuccess()
   {
     Vector3 middleOfScreen = new Vector3(Screen.width / 2f, Screen.height / 2f, 0f);
     GameObject modal = Instantiate(successModal, middleOfScreen, Quaternion.identity);
-    modal.transform.parent = canvas.transform;
+    modal.transform.SetParent(canvas.transform);
   }
 
   void LevelFail()
   {
     Vector3 middleOfScreen = new Vector3(Screen.width / 2f, Screen.height / 2f, 0f);
     GameObject modal = Instantiate(failModal, middleOfScreen, Quaternion.identity);
-    modal.transform.parent = canvas.transform;
+    modal.transform.SetParent(canvas.transform);
   }
 
 
