@@ -7,7 +7,8 @@ using System;
 public class LevelManager : MonoBehaviour
 {
 
-  [SerializeField] int currentLevel;
+  public static int currentLevel;
+  
   ScoreManager scoreManager;
   ShapesManager shapesManager;
   SoundManager soundManager;
@@ -19,7 +20,7 @@ public class LevelManager : MonoBehaviour
   void Start()
   {
     levelText = GetComponentInChildren<Text>();
-    levelText.text = "Lv. " + (currentLevel + 1).ToString("n0");
+    levelText.text = "Lv. " + (currentLevel).ToString("n0");
     scoreManager = FindObjectOfType<ScoreManager>();
     shapesManager = FindObjectOfType<ShapesManager>();
     soundManager = FindObjectOfType<SoundManager>();
@@ -30,6 +31,11 @@ public class LevelManager : MonoBehaviour
   public int GetCurrentLevel()
   {
     return currentLevel;
+  }
+
+  public int SetCurrentLevel(int value)
+  {
+    return currentLevel = value;
   }
 
   public void LevelSuccessCheck()

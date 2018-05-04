@@ -24,7 +24,7 @@ public static class Constants
   public static readonly int SubsequentMatchScore = 120;
 
   public static readonly int[] scoreNeededToLevel = {
-    3000,
+    0,
     5000,
     7000,
     8000,

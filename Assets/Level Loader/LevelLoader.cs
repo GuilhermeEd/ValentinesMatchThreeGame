@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class LevelLoader : MonoBehaviour {
 
-	[SerializeField] int level = 1;
-
-	public void LoadLevel() {
+	public void LoadLevel(int level) {
 		SceneManager.LoadScene(level);
+		LevelManager.currentLevel = level;
 	}
+
 }

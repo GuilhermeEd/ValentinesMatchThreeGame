@@ -12,10 +12,14 @@ public class GameManager : MonoBehaviour
   public bool gameStarted = false;
 
   Timer timer;
+  PlayerPrefsManager playerPrefsManager;
+  LevelManager levelManager;
 
   void Start()
   {
     timer = FindObjectOfType<Timer>();
+    levelManager = FindObjectOfType<LevelManager>();
+    playerPrefsManager = FindObjectOfType<PlayerPrefsManager>();
   }
 
   public void OnTimeUp()
@@ -35,6 +39,7 @@ public class GameManager : MonoBehaviour
     Vector3 middleOfScreen = new Vector3(Screen.width / 2f, Screen.height / 2f, 0f);
     GameObject modal = Instantiate(successModal, middleOfScreen, Quaternion.identity);
     modal.transform.SetParent(canvas.transform);
+    playerPrefsManager.SetUnlockedLevels(levelManager.GetCurrentLevel());
   }
 
   void LevelFail()
