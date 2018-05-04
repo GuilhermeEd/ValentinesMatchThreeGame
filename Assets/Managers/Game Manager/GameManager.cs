@@ -9,12 +9,14 @@ public class GameManager : MonoBehaviour
   [SerializeField] GameObject failModal;
   [SerializeField] GameObject canvas;
 
+  public bool gameStarted = false;
+
   Timer timer;
 
-  void Start () {
+  void Start()
+  {
     timer = FindObjectOfType<Timer>();
   }
-
 
   public void OnTimeUp()
   {
@@ -42,5 +44,10 @@ public class GameManager : MonoBehaviour
     modal.transform.SetParent(canvas.transform);
   }
 
+  public void StartGame()
+  {
+    gameStarted = true;
+    timer.Init();
+  }
 
 }

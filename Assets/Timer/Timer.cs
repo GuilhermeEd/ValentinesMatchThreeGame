@@ -15,8 +15,7 @@ public class Timer : MonoBehaviour
   GameObject sliderFill;
   Image sliderFillimage;
   GameManager gameManager;
-  bool isCounting = true;
-
+  bool isCounting = false;
 
   // Use this for initialization
   void Start()
@@ -28,6 +27,7 @@ public class Timer : MonoBehaviour
     sliderFillimage.color = startTimeColor;
 
     gameManager = GameObject.FindObjectOfType<GameManager>();
+
   }
 
   void Update()
@@ -46,6 +46,11 @@ public class Timer : MonoBehaviour
       Destroy(sliderFill);
       gameManager.OnTimeUp();
     }
+  }
+
+  public void Init()
+  {
+    isCounting = true;
   }
 
   public void Stop()

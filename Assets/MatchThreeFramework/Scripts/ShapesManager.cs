@@ -9,6 +9,7 @@ public class ShapesManager : MonoBehaviour
 {
 
   ScoreManager scoreManager;
+  GameManager gameManager;
 
   public Text DebugText;
   public bool ShowDebugInfo = false;
@@ -38,7 +39,8 @@ public class ShapesManager : MonoBehaviour
   // Use this for initialization
   void Start()
   {
-    scoreManager = GameObject.FindObjectOfType<ScoreManager>();
+    scoreManager = FindObjectOfType<ScoreManager>();
+    gameManager = FindObjectOfType<GameManager>();
     InitializeTypesOnPrefabShapesAndBonuses();
 
     InitializeCandyAndSpawnPositions();
@@ -192,7 +194,7 @@ public class ShapesManager : MonoBehaviour
     if (state == GameState.None)
     {
       //user has clicked or touched
-      if (Input.GetMouseButtonDown(0))
+      if (Input.GetMouseButtonDown(0) && gameManager.gameStarted)
       {
         //get the hit position
         var hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
