@@ -30,9 +30,9 @@ public class ScoreManager : MonoBehaviour
       int lv = levelManager.GetCurrentLevel();
       int scoreNeeded = Constants.scoreNeededToLevel[lv];
       int score = GetScore();
-
-      scoreText.text = value.ToString("n0");
-      slider.value = (float) (score) / (scoreNeeded);
+      float progress = (float) (score) / (scoreNeeded);
+      scoreText.text = (progress * 100).ToString("n2") + "%";
+      slider.value = progress;
       levelManager.LevelSuccessCheck();
     }
     catch (IndexOutOfRangeException e)

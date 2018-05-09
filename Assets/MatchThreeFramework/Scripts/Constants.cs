@@ -14,7 +14,7 @@ public static class Constants
 
   public static readonly float ExplosionDuration = 0.3f;
 
-  public static readonly float WaitBeforePotentialMatchesCheck = 3f;
+  public static readonly float WaitBeforePotentialMatchesCheck = 1.5f;
   public static readonly float OpacityAnimationFrameDelay = 0.05f;
 
   public static readonly int MinimumMatches = 3;
@@ -25,10 +25,11 @@ public static class Constants
 
   public static readonly int[] scoreNeededToLevel = {
     0,
-    5000,
-    7000,
-    8000,
+    25000,
+    22000,
+    15000,
     10000,
+    5000,
     };
 
 }

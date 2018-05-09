@@ -7,9 +7,10 @@ using UnityEngine.SceneManagement;
 public class FailModal : MonoBehaviour
 {
 
-  Text missingScore;
+  Text progress;
   ScoreManager scoreManager;
   LevelManager levelManager;
+  int scoreNeeded;
 
   static FailModal singleton;
 
@@ -27,24 +28,29 @@ public class FailModal : MonoBehaviour
 
   void Start()
   {
-    missingScore = transform.Find("Container").Find("Score").Find("Value").GetComponent<Text>();
+    progress = transform.Find("Container").Find("Score").Find("Value").GetComponent<Text>();
     scoreManager = FindObjectOfType<ScoreManager>();
     levelManager = FindObjectOfType<LevelManager>();
-
-    int scoreNeeded = Constants.scoreNeededToLevel[levelManager.GetCurrentLevel()];
+    scoreNeeded = Constants.scoreNeededToLevel[levelManager.GetCurrentLevel()];
     int scoreAchieved = scoreManager.GetScore();
-    missingScore.text = (scoreNeeded - scoreAchieved).ToString("n0");
+    progress.text = (((float)scoreAchieved / scoreNeeded) * 100).ToString("n2") + "%";
+  }
+
+  void Update()
+  {
+    int scoreAchieved = scoreManager.GetScore();
+    progress.text = (((float)scoreAchieved / scoreNeeded) * 100).ToString("n2") + "%";
   }
 
   public void TryAgain()
   {
-		Scene scene = SceneManager.GetActiveScene();
-		SceneManager.LoadScene(scene.name);
+    Scene scene = SceneManager.GetActiveScene();
+    SceneManager.LoadScene(scene.name);
   }
 
   public void Exit()
   {
-		int mapSceneIndex = 0;
-		SceneManager.LoadScene(mapSceneIndex);
+    int mapSceneIndex = 0;
+    SceneManager.LoadScene(mapSceneIndex);
   }
 }

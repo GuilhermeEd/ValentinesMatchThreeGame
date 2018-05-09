@@ -7,8 +7,10 @@ using UnityEngine.SceneManagement;
 public class SuccessModal : MonoBehaviour
 {
 
-  Text score;
+  Text progress;
   ScoreManager scoreManager;
+  LevelManager levelManager;
+  int scoreNeeded;
 
   static SuccessModal singleton;
 
@@ -26,10 +28,18 @@ public class SuccessModal : MonoBehaviour
 
   void Start()
   {
-    score = transform.Find("Container").Find("Score").Find("Value").GetComponent<Text>();
+    progress = transform.Find("Container").Find("Score").Find("Value").GetComponent<Text>();
     scoreManager = FindObjectOfType<ScoreManager>();
+    levelManager = FindObjectOfType<LevelManager>();
+    scoreNeeded = Constants.scoreNeededToLevel[levelManager.GetCurrentLevel()];
+    int scoreAchieved = scoreManager.GetScore();
+    progress.text = (((float)scoreAchieved / scoreNeeded) * 100).ToString("n2") + "%";
+  }
 
-    score.text = scoreManager.GetScore().ToString("n0");
+  void Update()
+  {
+    int scoreAchieved = scoreManager.GetScore();
+    progress.text = (((float)scoreAchieved / scoreNeeded) * 100).ToString("n2") + "%";
   }
 
   public void TryAgain()
@@ -40,8 +50,8 @@ public class SuccessModal : MonoBehaviour
 
   public void Continue()
   {
-		int mapSceneIndex = 0;
-		SceneManager.LoadScene(mapSceneIndex);
+    int mapSceneIndex = 0;
+    SceneManager.LoadScene(mapSceneIndex);
   }
 
 }

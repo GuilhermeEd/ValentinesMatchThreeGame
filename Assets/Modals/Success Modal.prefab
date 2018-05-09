@@ -280,7 +280,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Seus Pontos:'
+  m_Text: 'Seu Progresso:'
 --- !u!114 &114316482715853754
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -426,7 +426,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 123456789
+  m_Text: 100.00%
 --- !u!114 &114697504906630706
 MonoBehaviour:
   m_ObjectHideFlags: 1

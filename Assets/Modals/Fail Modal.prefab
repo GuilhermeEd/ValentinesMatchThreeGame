@@ -365,7 +365,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 123456789
+  m_Text: 99,99%
 --- !u!114 &114469091586521654
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -483,7 +483,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Faltou Somente
+  m_Text: 'Seu Progresso:'
 --- !u!114 &114616841332816748
 MonoBehaviour:
   m_ObjectHideFlags: 1
