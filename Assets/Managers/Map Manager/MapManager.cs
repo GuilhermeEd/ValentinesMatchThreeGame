@@ -11,7 +11,7 @@ public class MapManager : MonoBehaviour
 
     PlayerPrefsManager playerPrefsManager;
 
-    void Start()
+    void Awake()
     {
         playerPrefsManager = FindObjectOfType<PlayerPrefsManager>();
         for (int i = 1; i <= playerPrefsManager.GetUnlockedLevels(); i++)

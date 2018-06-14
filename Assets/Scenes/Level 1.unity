@@ -1030,34 +1030,34 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224035644674330730, guid: 39fbcf5be5535664b9d65a29c9492f6e,
     type: 2}
   m_PrefabInternal: {fileID: 2044653395}
---- !u!1 &1981856604
+--- !u!1 &2031042185
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 1981856606}
-  - component: {fileID: 1981856605}
+  - component: {fileID: 2031042187}
+  - component: {fileID: 2031042186}
   m_Layer: 0
-  m_Name: About_That_Oldie
+  m_Name: '[No Copyright Music] QUEEN OF THE SKIES - Nicolai Heidlas Music'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!82 &1981856605
+--- !u!82 &2031042186
 AudioSource:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1981856604}
+  m_GameObject: {fileID: 2031042185}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1d84e31da8cfd42408c784c2e75ff2f6, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ca2bf39a644b756419741abe01cfda2e, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1110,7 +1110,7 @@ AudioSource:
       outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 0
+    m_RotationOrder: 4
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1140,13 +1140,13 @@ AudioSource:
       outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 0
---- !u!4 &1981856606
+    m_RotationOrder: 4
+--- !u!4 &2031042187
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1981856604}
+  m_GameObject: {fileID: 2031042185}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}

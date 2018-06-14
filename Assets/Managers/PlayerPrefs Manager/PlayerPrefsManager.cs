@@ -9,6 +9,7 @@ public class PlayerPrefsManager : MonoBehaviour
 
     void Awake()
     {
+        // SetUnlockedLevels(4);
         if (singleton)
         {
             Destroy(gameObject);
@@ -18,10 +19,6 @@ public class PlayerPrefsManager : MonoBehaviour
             singleton = this;
             DontDestroyOnLoad(gameObject);
         }
-    }
-
-    void Start()
-    {
     }
 
     public int GetUnlockedLevels()
