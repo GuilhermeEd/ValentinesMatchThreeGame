@@ -26,15 +26,29 @@ public static class Constants {
     25000,
     20000,
     12000,
-    8000,
+    6500,
     4000,
   };
 
   public static readonly string[] sentences = {
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, ",
-    "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
-    " nisi ut aliquip ex ea commodo consequat.",
+    "Cinco anos se passaram desde então",
+    "e nem um dia sequer conseguimos ficar sem o outro",
+    "Fosse em crise ou alegria, o amor sempre crescia",
+    "Aos poucos percebi que você é a única com quem posso ser feliz",
+    "Sem querer me apaixonei a cada dia",
+    "E como amei me apaixonar",
+    "Porque você é a minha única e eterna namorada, minha melhor amiga e esposa",
+    "O melhor que a vida tem a oferecer",
+    "Agora estamos prontos para novas aventuras",
+    "Que continuemos buscando nossos sonhos",
+    "Juntos",
+    "Pode ser que passemos por dificuldades durante nossa jornada",
+    "Mas a dificuldade também nos ensinou a amar de verdade",
+    "E aconteça o que acontecer, tenha certeza de uma coisa",
+    "Sempre te amarei",
+    "A lição mais importante já foi aprendida",
+    "Quando se ama de verdade, o amor sempre vence",
+    "E desde que tenhamos um ao outro, haja o que houver, sempre poderemos ...",
   };
 
 }

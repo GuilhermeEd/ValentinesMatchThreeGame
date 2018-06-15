@@ -37965,8 +37965,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4151658933de9349a90c4a754582bff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  readingTime: 3
-  fadingTime: 3
+  readingTime: 2.72
+  fadingTime: 2
   startAgainButton: {fileID: 172746202}
 --- !u!114 &2021707724
 MonoBehaviour:
