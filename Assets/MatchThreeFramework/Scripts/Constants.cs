@@ -26,7 +26,7 @@ public static class Constants {
     25000,
     20000,
     12000,
-    6500,
+    6000,
     4000,
   };
 
