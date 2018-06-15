@@ -113,6 +113,34 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &4841792
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4841793}
+  m_Layer: 0
+  m_Name: IMG_20171008_134140
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4841793
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 4841792}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &225558603
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,8 +164,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 225558603}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -282.32, y: -500.25, z: 1}
-  m_LocalScale: {x: 0.7831813, y: 0.7831813, z: 0.7831813}
+  m_LocalPosition: {x: -281.51, y: -500.3, z: 1}
+  m_LocalScale: {x: 0.49609, y: 0.49609, z: 0.49609}
   m_Children: []
   m_Father: {fileID: 1204948012}
   m_RootOrder: 3
@@ -177,8 +205,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 56847d7fc3e77c3478b71d358c596fe0, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.347}
+  m_Sprite: {fileID: 21300000, guid: 1a48c926e03f8ff4aa2bba8316bde781, type: 3}
+  m_Color: {r: 0.876424, g: 0.9528302, b: 0.9072999, a: 0.7490196}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -465,7 +493,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
+  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 1}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -920,7 +948,7 @@ MonoBehaviour:
   - {fileID: 161608, guid: 1cfccd74339afd54c8eea25deb0e8aae, type: 2}
   - {fileID: 187046, guid: a4cb29e7d50f91041b867892963b1cf9, type: 2}
   - {fileID: 180178, guid: afa6b0eba9a9e794080048baed797d27, type: 2}
-  - {fileID: 180178, guid: 6b7739ab63239954bbaffe34eeb6422c, type: 2}
+  - {fileID: 180178, guid: a203165ddeb338d4e932cc259d4069be, type: 2}
   - {fileID: 180178, guid: 5d8ef39f006c29d4ea5f37ee2f322146, type: 2}
   ExplosionPrefabs:
   - {fileID: 126096, guid: 76ac26693b05fa94381733a6e6be640a, type: 2}
@@ -933,7 +961,7 @@ MonoBehaviour:
   - {fileID: 105690, guid: c9cde8189605ee449bcc97b998147d85, type: 2}
   - {fileID: 187842, guid: 11cb4356a18183c48b07164222227d2b, type: 2}
   - {fileID: 157836, guid: 19c708ee61002454eb4c54c029ce0eaf, type: 2}
-  - {fileID: 157836, guid: 8b787fd5973679743bf915f77589a53f, type: 2}
+  - {fileID: 157836, guid: 4015dc63857cbff448c3702fedd0133d, type: 2}
   - {fileID: 157836, guid: e8b2828e9ebc044459c83681ea356306, type: 2}
   soundManager: {fileID: 1624638383}
 --- !u!4 &1363272350
